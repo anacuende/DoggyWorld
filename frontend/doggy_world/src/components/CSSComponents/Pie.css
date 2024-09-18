@@ -1,0 +1,120 @@
+.pie {
+    background-color: #e6ebf0;
+    padding: 20px 10px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.contenedorPie {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.enlaces {
+    flex: 1;
+    text-align: left;
+}
+
+.enlaces a {
+    display: block;
+    color: #5555ff;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.enlaces a:hover {
+    text-decoration: underline;
+}
+
+.metodosPago {
+    flex: 1;
+    text-align: center;
+}
+
+.metodosPago h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.iconosPago img {
+    margin-right: 10px;
+    width: 40px;
+    height: auto;
+}
+
+.android {
+    flex: 1;
+    text-align: center;
+}
+
+.enlaceRepoAndroid {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.enlaceRepoAndroid img {
+    margin-right: 10px;
+    width: 30px;
+    height: auto;
+}
+
+.enlaceRepoAndroid span {
+    color: #000;
+    transition: text-decoration 0.3s;
+}
+
+.enlaceRepoAndroid:hover span, .enlaceRepoAndroid:focus span {
+    text-decoration: underline;
+    text-decoration-color: #000;
+}
+
+.RRSS {
+    flex: 1;
+    text-align: right;
+}
+
+.RRSS a {
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.RRSS a img {
+    width: 30px;
+    height: auto;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .contenedorPie {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .enlaces, .metodosPago, .android, .RRSS {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .iconosPago img {
+        width: 35px;
+    }
+
+    .RRSS a img {
+        width: 25px;
+    }
+}
