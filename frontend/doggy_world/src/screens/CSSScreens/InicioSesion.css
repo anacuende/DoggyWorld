@@ -1,0 +1,177 @@
+.contenedorInicioSesion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f5fc;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.tarjetaInicioSesion {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.seccionImagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logoImagen {
+  max-width: 100%;
+  height: auto;
+}
+
+.seccionFormulario {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.cabeceraInicioSesion {
+  width: 100%;
+  text-align: center;
+}
+
+.cabeceraInicioSesion h1 {
+  margin-bottom: 0.5rem;
+  margin-right: 2rem;
+  font-size: 24px;
+  color: #333;
+}
+
+.cabeceraInicioSesion p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+}
+
+.cuerpoInicioSesion {
+  width: 100%;
+}
+
+.cuerpoInicioSesion label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.mensajeError {
+  font-weight: bold;
+}
+
+.cuerpoInicioSesion input {
+  width: 100%;
+  max-width: calc(100% - 2rem);
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #009775;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.botonInicioSesion, .botonRegistro {
+  width: 100%;
+  max-width: calc(100% - 2rem);
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.botonInicioSesion {
+  background-color: #009775;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.botonRegistro {
+  background-color: white;
+  color: #333;
+  border: #009775 3px solid;
+}
+
+@media (max-width: 768px) {
+  .tarjetaInicioSesion {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .seccionImagen {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .logoImagen {
+    max-width: 60%;
+    height: auto;
+    margin-right: 1.75rem;
+  }
+
+  .seccionFormulario {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .cuerpoInicioSesion input, .botonInicioSesion, .botonRegistro {
+    width: 100%;
+    max-width: calc(100% - 2rem);
+    padding: 0.5rem;
+    font-size: 14px;
+  }
+
+  .cabeceraInicioSesion h1 {
+    font-size: 18px;
+  }
+
+  .cabeceraInicioSesion p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoImagen {
+    max-width: 30%;
+  }
+
+  .cuerpoInicioSesion input, .botonInicioSesion, .botonRegistro {
+    max-width: calc(100% - 1rem);
+    padding: 0.4rem;
+    font-size: 12px;
+  }
+
+  .cabeceraInicioSesion h1 {
+    font-size: 16px;
+  }
+
+  .cabeceraInicioSesion p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 476px) {
+  .cuerpoInicioSesion input, .botonInicioSesion, .botonRegistro {
+    max-width: calc(100% - 1.5rem);
+    padding: 0.4rem 0.8rem;
+  }
+}

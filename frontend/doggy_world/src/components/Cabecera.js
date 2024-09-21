@@ -1,10 +1,10 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import {NavLink, Outlet} from 'react-router-dom';
 import './CSSComponents/Cabecera.css';
-import banner from './Imágenes/banner.png';
-import carrito from './Imágenes/carrito.png';
-import usuario from './Imágenes/usuario.png';
-import menuIcon from './Imágenes/menu.png';
+import banner from './ImagenesComponents/banner.png';
+import carrito from './ImagenesComponents/carrito.png';
+import usuario from './ImagenesComponents/usuario.png';
+import menuIcon from './ImagenesComponents/menu.png';
 import Pie from './Pie';
 
 function Cabecera(props) {

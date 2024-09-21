@@ -1,10 +1,10 @@
 import React from 'react';
 import './CSSComponents/Pie.css';
-import visa from './Imágenes/visa.png';
-import mastercard from './Imágenes/mastercard.png';
-import android from './Imágenes/android.png';
-import instagram from './Imágenes/instagram.png';
-import tiktok from './Imágenes/tiktok.png';
+import visa from './ImagenesComponents/visa.png';
+import mastercard from './ImagenesComponents/mastercard.png';
+import android from './ImagenesComponents/android.png';
+import instagram from './ImagenesComponents/instagram.png';
+import tiktok from './ImagenesComponents/tiktok.png';
 
 function Pie() {
     return (
