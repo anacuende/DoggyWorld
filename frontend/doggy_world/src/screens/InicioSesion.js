@@ -54,7 +54,7 @@ function InicioSesion() {
           <div className="cabeceraInicioSesion">
             <h1>Inicia sesión</h1>
             <p>Inicia sesión para disfrutar de Doggy World</p>
-             {/* Solo se muestra en caso de error */}
+            {/* Solo se muestra en caso de error */}
             {mensajeError && <p className="mensajeError">{mensajeError}</p>}
           </div>
           <div className="cuerpoInicioSesion">

@@ -1,0 +1,174 @@
+.contenedorRegistro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140vh;
+    background-color: #f2f5fc;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.tarjetaRegistro {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.seccionImagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logoImagen {
+    max-width: 100%;
+    height: auto;
+}
+
+.seccionFormulario {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.cabeceraRegistro {
+    width: 100%;
+    text-align: center;
+}
+
+.cabeceraRegistro h1 {
+    margin-bottom: 0.5rem;
+    margin-right: 2rem;
+    font-size: 24px;
+    color: #333;
+}
+
+.cabeceraRegistro p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+}
+
+.cuerpoRegistro {
+    width: 100%;
+}
+
+.cuerpoRegistro label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.mensajeError {
+    font-weight: bold;
+}
+
+.cuerpoRegistro input {
+    width: 100%;
+    max-width: calc(100% - 2rem);
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #009775;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.botonRegistro, .botonInicioSesion {
+    width: 100%;
+    max-width: calc(100% - 2rem);
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.botonRegistro {
+    background-color: #009775;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.botonInicioSesion {
+    background-color: white;
+    color: #333;
+    border: #009775 3px solid;
+}
+
+@media (max-width: 768px) {
+    .tarjetaRegistro {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .seccionImagen {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .logoImagen {
+        max-width: 30%;
+        height: auto;
+        margin-right: 1.75rem;
+    }
+
+    .seccionFormulario {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .cuerpoRegistro input, .botonRegistro, .botonInicioSesion {
+        width: 100%;
+        max-width: calc(100% - 2rem);
+        padding: 0.5rem;
+        font-size: 14px;
+    }
+
+    .cabeceraRegistro h1 {
+        font-size: 18px;
+    }
+
+    .cabeceraRegistro p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedorRegistro {
+        height: 120vh;
+    }
+
+    .logoImagen {
+        max-width: 30%;
+    }
+
+    .cuerpoRegistro input, .botonRegistro, .botonInicioSesion {
+        max-width: calc(100% - 1.5rem);
+        padding: 0.4rem 0.8rem;
+        font-size: 12px;
+    }
+
+    .cabeceraRegistro h1 {
+        font-size: 16px;
+    }
+
+    .cabeceraRegistro p {
+        font-size: 10px;
+    }
+}
