@@ -79,8 +79,8 @@ function Registro() {
               <label htmlFor="confirmarContrasena">Repetir contraseña</label>
               <input type="password" id="confirmarContrasena" value={confirmarContrasena} onChange={(e) => setConfirmarContrasena(e.target.value)} required />
 
-              <button type="submit" className="botonRegistro">Registrarse</button>
-              <button type="button" className="botonInicioSesion" onClick={manejarRedireccionInicioSesion}>Iniciar sesión</button>
+              <button type="submit" className="botonRegistroR">Registrarse</button>
+              <button type="button" className="botonInicioSesionR" onClick={manejarRedireccionInicioSesion}>Iniciar sesión</button>
             </form>
           </div>
         </div>

@@ -65,8 +65,8 @@ function InicioSesion() {
               <label htmlFor="contrasena">Contraseña</label>
               <input type="password" id="contrasena" name="contrasena" value={contrasena} onChange={(e) => setContrasena(e.target.value)} required/>
 
-              <button type="submit" className="botonInicioSesion">Iniciar sesión</button>
-              <button type="button" className="botonRegistro" onClick={manejarRedireccionRegistro}>Registrarse</button>
+              <button type="submit" className="botonInicioSesionIS">Iniciar sesión</button>
+              <button type="button" className="botonRegistroIS" onClick={manejarRedireccionRegistro}>Registrarse</button>
             </form>
           </div>
         </div>

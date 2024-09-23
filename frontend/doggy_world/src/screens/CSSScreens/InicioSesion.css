@@ -88,7 +88,7 @@
   box-sizing: border-box;
 }
 
-.botonInicioSesion, .botonRegistro {
+.botonInicioSesionIS, .botonRegistroIS {
   width: 100%;
   max-width: calc(100% - 2rem);
   padding: 0.6rem 1rem;
@@ -99,13 +99,13 @@
   box-sizing: border-box;
 }
 
-.botonInicioSesion {
+.botonInicioSesionIS {
   background-color: #009775;
   color: white;
   margin-bottom: 1rem;
 }
 
-.botonRegistro {
+.botonRegistroIS {
   background-color: white;
   color: #333;
   border: #009775 3px solid;
@@ -133,7 +133,7 @@
     padding: 1rem;
   }
 
-  .cuerpoInicioSesion input, .botonInicioSesion, .botonRegistro {
+  .cuerpoInicioSesion input, .botonInicioSesionIS, .botonRegistroIS {
     width: 100%;
     max-width: calc(100% - 2rem);
     padding: 0.5rem;
@@ -154,7 +154,7 @@
     max-width: 30%;
   }
 
-  .cuerpoInicioSesion input, .botonInicioSesion, .botonRegistro {
+  .cuerpoInicioSesion input, .botonInicioSesionIS, .botonRegistroIS {
     max-width: calc(100% - 1.5rem);
     padding: 0.4rem 0.8rem;
     font-size: 12px;
