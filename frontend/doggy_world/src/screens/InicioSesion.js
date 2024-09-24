@@ -28,6 +28,8 @@ function InicioSesion() {
       if (respuesta.status === 201) {
         const datos = await respuesta.json();
         console.log('Sesión iniciada:', datos);
+        // Guardar el token
+        localStorage.setItem('token', datos.token);
         navegar('/inicio');
       } else {
         const datosError = await respuesta.json();
