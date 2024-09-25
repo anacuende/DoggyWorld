@@ -3,6 +3,7 @@ import InicioSesion from './screens/InicioSesion';
 import Registro from './screens/Registro';
 import Cabecera from './components/Cabecera';
 import Inicio from './screens/Inicio';
+import Productos from './screens/Productos';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/registro" element={<Registro/>}/>
         <Route element={<Cabecera/>}>
 		      <Route path="inicio" element={<Inicio/>}/>
+          <Route path="productos" element={<Productos/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

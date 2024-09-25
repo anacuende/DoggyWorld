@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import Yorkies from './ImagenesScreens/yorkies.png';
 import './CSSScreens/Inicio.css';
 
@@ -38,7 +38,7 @@ function Inicio() {
     <div className="inicio-contenedor">
       <div className="inicio-columna izquierda">
         <h2>Inicio</h2>
-        <hr className="subrayado"/>
+        <hr className="subrayadoInicio"/>
         <p>A veces es agotador buscar un producto concreto para tu perro, sobre todo cuando se trata de algún producto medicinal como un alimento específico o un champú que trate su tipo de pelaje de la mejor forma. En Doggy World esto se acabó, ya que disponemos de una amplia variedad de productos y tú podrás obtenerlos todos aquí, con solo un click. Explora nuestra página y descubre el lugar donde conseguir todo lo que necesitas para tu mejor amigo.
         </p>
         <img src={Yorkies} alt="Yorkies" className="imagen-yorkies"/>
@@ -46,7 +46,7 @@ function Inicio() {
       
       <div className="inicio-columna derecha">
         <h2>Últimas novedades</h2>
-        <hr className="subrayado"/>
+        <hr className="subrayadoInicio"/>
         {/* Mostrar los productos obtenidos con el random */}
         {error ? (
           <p className="mensaje-error">{error}</p>
