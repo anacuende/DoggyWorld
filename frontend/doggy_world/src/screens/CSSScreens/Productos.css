@@ -1,6 +1,6 @@
 .productos-pagina {
     padding: 0 40px;
-    margin: 0 auto;
+    margin: 0 auto 25px auto;
 }
   
 .tituloProductos {
@@ -55,6 +55,11 @@
   
 .producto {
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.producto:hover {
+    transform: scale(1.10);
 }
   
 .imagen-producto {
@@ -84,7 +89,7 @@ p {
 }
   
 @media (max-width: 480px) {
-    .titulo {
+    .tituloProductos {
         font-size: 24px;
     }
   
@@ -92,5 +97,5 @@ p {
         font-size: 14px;
         padding: 8px 12px;
     }
-  }
+}
   

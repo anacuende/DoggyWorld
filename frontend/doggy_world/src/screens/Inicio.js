@@ -51,7 +51,7 @@ function Inicio() {
         {error ? (
           <p className="mensaje-error">{error}</p>
         ) : (
-          <div className="productos">
+          <div className="productosInicio">
             {productos.map((producto) => (
               <div key={producto.id} className="producto">
                 <img src={producto.imagen} alt={producto.nombre} className="imagen-producto"/>

@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './CSSScreens/Productos.css';
 
 function Productos() {
+    const navegar = useNavigate();
     const [productos, setProductos] = useState([]);
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(0);
     const [error, setError] = useState(null);
@@ -18,6 +20,7 @@ function Productos() {
     ];
 
     useEffect(() => {
+        // Petición para obtener los productos
         const obtenerProductos = async () => {
             try {
                 const token = localStorage.getItem('token');
@@ -57,10 +60,16 @@ function Productos() {
         setCategoriaSeleccionada(idCategoria);
     };
 
+    // Navegar al detalle del producto seleccionado
+    const irADetalleProducto = (productId) => {
+        navegar(`/productos/${productId}`);
+    };
+
     return (
         <div className="productos-pagina">
             <h1 className="tituloProductos">Productos</h1>
             <hr className="subrayadoProductos"/>
+            {/* Mapea el id del producto de la categoría seleccionada */}
             <div className="botones-categorias">
                 {categorias.map((categoria) => (
                     <button key={categoria.id} className={`boton-categoria ${categoriaSeleccionada === categoria.id ? 'activo' : ''}`} onClick={() => manejarCambioCategoria(categoria.id)}>
@@ -68,19 +77,16 @@ function Productos() {
                     </button>
                 ))}
             </div>
-
+            
+            {/* Mapea los productos de la categoría seleccionda */}
             <div className="productosProductos">
-                {error ? (
-                    <p className="error">{error}</p>
-                ) : (
-                    productos.map((producto) => (
-                        <div key={producto.id} className="producto">
-                            <img src={producto.imagen} alt={producto.nombre} className="imagen-producto"/>
-                            <p>{producto.nombre}</p>
-                            <p>{producto.precio.toFixed(2)} €</p>
-                        </div>
-                    ))
-                )}
+                {productos.map((producto) => (
+                    <div key={producto.id} className="producto" onClick={() => irADetalleProducto(producto.id)}>
+                        <img src={producto.imagen} alt={producto.nombre} className="imagen-producto"/>
+                        <p>{producto.nombre}</p>
+                        <p>{producto.precio.toFixed(2)} €</p>
+                    </div>
+                ))}
             </div>
         </div>
     );
