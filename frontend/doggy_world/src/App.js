@@ -5,6 +5,7 @@ import Cabecera from './components/Cabecera';
 import Inicio from './screens/Inicio';
 import Productos from './screens/Productos';
 import DetalleProducto from './screens/DetalleProducto';
+import Carrito from './screens/Carrito';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Route element={<Cabecera/>}>
 		      <Route path="inicio" element={<Inicio/>}/>
           <Route path="productos" element={<Productos/>}/>
-          <Route path="/productos/:productId" element={<DetalleProducto/>}/>
+          <Route path="productos/:productId" element={<DetalleProducto/>}/>
+          <Route path="carrito" element={<Carrito/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

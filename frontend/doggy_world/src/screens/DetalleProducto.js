@@ -102,13 +102,13 @@ function DetalleProducto() {
     return (
         <div className="detalle-producto-pagina">
             <h1 className="tituloDetalle">Detalle del producto</h1>
-            <hr className="subrayadoDetalle" />
+            <hr className="subrayadoDetalle"/>
 
             {/* Muestra la información del producto seleccionado y permite añadirlo al carrito o a la lista de deseos */}
             {producto && (
                 <div className="detalle-contenido">
                     <div className="imagen-contenedor">
-                        <img src={producto.imagen} alt={producto.nombre} className="imagen-detalle" />
+                        <img src={producto.imagen} alt={producto.nombre} className="imagen-detalle"/>
                     </div>
 
                     <div className="informacion-producto">
@@ -122,7 +122,7 @@ function DetalleProducto() {
                                 Añadir al carrito
                             </button>
                             <button className="btn-deseos" onClick={manejadorListaDeseos}>
-                                <img src={ListaDeseos} alt="Añadir a lista de deseos" className="icono-deseos" />
+                                <img src={ListaDeseos} alt="Añadir a lista de deseos" className="icono-deseos"/>
                             </button>
                         </div>
                     </div>
@@ -131,11 +131,11 @@ function DetalleProducto() {
 
             {/* Mapea el producto seleccionado para obtener su detalle */}
             <h2 className="tituloProductosDetalle">Te podría interesar</h2>
-            <hr className="subrayadoProductosDetalle" />
+            <hr className="subrayadoProductosDetalle"/>
             <div className="productos-random">
                 {productosRandom.map((producto) => (
                     <div key={producto.id} className="producto-random" onClick={() => irADetalleProducto(producto.id)}>
-                        <img src={producto.imagen} alt={producto.nombre} className="imagen-random" />
+                        <img src={producto.imagen} alt={producto.nombre} className="imagen-random"/>
                         <p>{producto.nombre}</p>
                         <p>{producto.precio.toFixed(2)} €</p>
                     </div>
