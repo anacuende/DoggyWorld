@@ -66,13 +66,13 @@ function Productos() {
     };
 
     return (
-        <div className="productos-pagina">
+        <div className="productosPagina">
             <h1 className="tituloProductos">Productos</h1>
             <hr className="subrayadoProductos"/>
             {/* Mapea el id del producto de la categoría seleccionada */}
-            <div className="botones-categorias">
+            <div className="botonesCategorias">
                 {categorias.map((categoria) => (
-                    <button key={categoria.id} className={`boton-categoria ${categoriaSeleccionada === categoria.id ? 'activo' : ''}`} onClick={() => manejarCambioCategoria(categoria.id)}>
+                    <button key={categoria.id} className={`botonCategoria ${categoriaSeleccionada === categoria.id ? 'activo' : ''}`} onClick={() => manejarCambioCategoria(categoria.id)}>
                         {categoria.nombre}
                     </button>
                 ))}
@@ -83,8 +83,8 @@ function Productos() {
                 {productos.map((producto) => (
                     <div key={producto.id} className="producto" onClick={() => irADetalleProducto(producto.id)}>
                         <img src={producto.imagen} alt={producto.nombre} className="imagen-producto"/>
-                        <p>{producto.nombre}</p>
-                        <p>{producto.precio.toFixed(2)} €</p>
+                        <p className="pProductos">{producto.nombre}</p>
+                        <p className="pProductos">{producto.precio.toFixed(2)} €</p>
                     </div>
                 ))}
             </div>
