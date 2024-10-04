@@ -34,6 +34,11 @@ function Inicio() {
     obtenerProductos();
   }, [navegar]);
 
+  // Navegar al detalle del producto seleccionado
+  const irADetalleProducto = (productId) => {
+    navegar(`/productos/${productId}`);
+  };
+
   return (
     <div className="inicio-contenedor">
       <div className="inicio-columna izquierda">
@@ -53,7 +58,7 @@ function Inicio() {
         ) : (
           <div className="productosInicio">
             {productos.map((producto) => (
-              <div key={producto.id} className="producto">
+              <div key={producto.id} className="producto" onClick={() => irADetalleProducto(producto.id)}>
                 <img src={producto.imagen} alt={producto.nombre} className="imagen-producto"/>
                 <p>{producto.nombre}</p>
                 <p>{producto.precio.toFixed(2)} €</p>
