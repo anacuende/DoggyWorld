@@ -6,6 +6,7 @@ import Inicio from './screens/Inicio';
 import Productos from './screens/Productos';
 import DetalleProducto from './screens/DetalleProducto';
 import Carrito from './screens/Carrito';
+import PerfilModificarDatos from './screens/PerfilModificarDatos';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="productos" element={<Productos/>}/>
           <Route path="productos/:productId" element={<DetalleProducto/>}/>
           <Route path="carrito" element={<Carrito/>}/>
+          <Route path="perfilModificarDatos" element={<PerfilModificarDatos/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,114 @@
+.perfilUsuarioPagina {
+    padding: 0 80px;
+    margin: 0 auto 25px auto;
+}
+
+.tituloPerfil {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.subrayadoPerfil {
+    border: 3px solid #009775;
+    margin: 0 auto 20px;
+}
+
+.botonesMenu {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.botonMenu {
+    background-color: white;
+    color: #009775;
+    border: 2px solid #009775;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.botonMenu.activo {
+    background-color: #009775;
+    color: white;
+}
+
+.botonMenu:hover {
+    background-color: #009775;
+    color: white;
+}
+
+/* Estilos para el botón de "Cerrar sesión" */
+.botonMenu.cerrarSesion {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+}
+
+.botonMenu.cerrarSesion:hover {
+    background-color: red;
+    color: white;
+}
+
+.contenidoPerfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formPerfil {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.formPerfil label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.formPerfil input {
+    padding: 10px;
+    border: 1px solid #009775;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btnActualizar {
+    background-color: #009775;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btnActualizar:hover {
+    background-color: #007B62;
+}
+
+@media (max-width: 768px) {
+    .botonesMenu {
+        display: inline-block;
+    }
+
+    .botonMenu {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .botonMenu {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}

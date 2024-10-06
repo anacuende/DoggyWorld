@@ -56,7 +56,7 @@ function Cabecera(props) {
                     <li><NavLink to="/contacto" activeClassName="active">Contacto</NavLink></li>
                     <li><NavLink to="/preguntasFrecuentes" activeClassName="active">Preguntas Frecuentes</NavLink></li>
                     <li><NavLink to="/carrito"><img src={carrito} alt="Carrito" className="iconoCarrito"/></NavLink></li>
-                    <li><NavLink to="/perfil"><img src={usuario} alt="Usuario" className="iconoUsuario"/></NavLink></li>
+                    <li><NavLink to="/perfilModificarDatos"><img src={usuario} alt="Usuario" className="iconoUsuario"/></NavLink></li>
                 </ul>
             </nav>
 
