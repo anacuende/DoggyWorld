@@ -69,7 +69,7 @@ function Cabecera(props) {
                     <li><NavLink to="/contacto" onClick={cerrarMenu} activeClassName="active">Contacto</NavLink></li>
                     <li><NavLink to="/preguntasFrecuentes" onClick={cerrarMenu} activeClassName="active">Preguntas Frecuentes</NavLink></li>
                     <li><NavLink to="/carrito" onClick={cerrarMenu} activeClassName="active">Carrito</NavLink></li>
-                    <li><NavLink to="/perfil" onClick={cerrarMenu} activeClassName="active">Perfil</NavLink></li>
+                    <li><NavLink to="/perfilModificarDatos" onClick={cerrarMenu} activeClassName="active">Perfil</NavLink></li>
                 </ul>
             </div>
             <Outlet/>

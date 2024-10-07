@@ -8,6 +8,7 @@ import DetalleProducto from './screens/DetalleProducto';
 import Carrito from './screens/Carrito';
 import PerfilModificarDatos from './screens/PerfilModificarDatos';
 import PerfilListaDeseos from './screens/PerfilListaDeseos';
+import PerfilPedidos from './screens/PerfilPedidos';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="carrito" element={<Carrito/>}/>
           <Route path="perfilModificarDatos" element={<PerfilModificarDatos/>}/>
           <Route path="perfilListaDeseos" element={<PerfilListaDeseos/>}/>
+          <Route path="perfilPedidos" element={<PerfilPedidos/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -78,7 +78,7 @@ function PerfilListaDeseos() {
 
     return (
         <div className="listaDeseosPagina">
-            <MenuPerfil />
+            <MenuPerfil/>
             {/* Mostrar errores */}
             {error && <p className="listaDeseosError">{error}</p>}
 
