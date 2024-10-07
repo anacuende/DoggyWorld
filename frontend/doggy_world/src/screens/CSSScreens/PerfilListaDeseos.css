@@ -1,0 +1,87 @@
+.listaDeseosPagina {
+    padding: 0 80px;
+    margin: 0 auto 25px auto;
+}
+
+.listaDeseosProductos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-items: center;
+    padding: 0 40px;
+}
+
+.listaDeseosProducto {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.listaDeseosProducto:hover {
+    transform: scale(1.10);
+}
+
+.listaDeseosImagenProducto {
+    width: 100%;
+    height: auto;
+}
+
+.listaDeseospProductos {
+    margin: 10px 0;
+}
+
+.listaDeseosBtnCarrito {
+    background-color: #009775;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: block;
+}
+
+.listaDeseosBtCarrito:hover {
+    background-color: #007B62;
+}
+
+.listaDeseosBtnEliminar {
+    background-color: red;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: block;
+}
+
+.listaDeseosBtnEliminar:hover {
+    background-color: darkred;
+}
+
+.listaDeseosError {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+}
+
+.listaDeseosError {
+    color: red;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .listaDeseosProductos {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 20px;
+    }
+}
+  
+@media (max-width: 480px) {
+    .listaDeseosProductos {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 10px;
+    }
+}

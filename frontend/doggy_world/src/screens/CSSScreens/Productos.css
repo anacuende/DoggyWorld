@@ -41,7 +41,7 @@
 }
   
 .botonCategoria:hover {
-    background-color: #00654d;
+    background-color: #009775;
     color: white;
 }
   
@@ -76,7 +76,6 @@
     font-size: 18px;
 }
   
-
 @media (max-width: 768px) {
     .botonesCategorias {
         display: inline-block;
@@ -97,4 +96,3 @@
         padding: 8px 12px;
     }
 }
-  

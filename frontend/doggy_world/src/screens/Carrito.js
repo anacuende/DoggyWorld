@@ -56,7 +56,7 @@ function Carrito() {
         }
     };
 
-    // Controla con cambios en los valores de los inputs
+    // Controla lsn cambios en los valores de los inputs
     const manejarCambioInput = (e) => {
         const { name, value } = e.target;
         setFormData((prevFormData) => ({

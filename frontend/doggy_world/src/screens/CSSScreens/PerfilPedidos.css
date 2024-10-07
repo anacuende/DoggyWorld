@@ -1,0 +1,64 @@
+.pedidosPagina {
+    padding: 0 40px;
+    margin: 0 auto 25px auto;
+}
+
+.pedidosTitulo {
+    text-align: left;
+    font-size: 28px;
+    margin: 0;
+}
+
+.pedidosSubrayado {
+    width: 100%;
+    border: 3px solid #009775;
+    margin: 20px 0;
+}
+
+.pedidosCabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pedidosCancelar {
+    display: flex;
+    align-items: center;
+}
+
+.pedidosbtnCancelar {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.pedidosbtnCancelar:hover {
+    background-color: red;
+    color: white;
+}
+
+.pedidosTotal {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .PedidosContainer {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pedidosTitulo {
+        font-size: 24px;
+    }
+
+    .pedidosbtnCancelar {
+        padding: 6px 10px;
+    }
+}
