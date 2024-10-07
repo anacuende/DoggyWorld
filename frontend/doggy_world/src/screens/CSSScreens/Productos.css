@@ -76,7 +76,6 @@
     font-size: 18px;
 }
   
-
 @media (max-width: 768px) {
     .botonesCategorias {
         display: inline-block;
@@ -97,4 +96,3 @@
         padding: 8px 12px;
     }
 }
-  

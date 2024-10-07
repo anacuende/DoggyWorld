@@ -7,6 +7,7 @@ import Productos from './screens/Productos';
 import DetalleProducto from './screens/DetalleProducto';
 import Carrito from './screens/Carrito';
 import PerfilModificarDatos from './screens/PerfilModificarDatos';
+import PerfilListaDeseos from './screens/PerfilListaDeseos';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="productos/:productId" element={<DetalleProducto/>}/>
           <Route path="carrito" element={<Carrito/>}/>
           <Route path="perfilModificarDatos" element={<PerfilModificarDatos/>}/>
+          <Route path="perfilListaDeseos" element={<PerfilListaDeseos/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

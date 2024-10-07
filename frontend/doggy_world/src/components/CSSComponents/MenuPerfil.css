@@ -1,0 +1,69 @@
+.perfilUsuarioMenu {
+    margin: 0 auto 25px auto;
+}
+
+.tituloPerfil {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.subrayadoPerfil {
+    border: 3px solid #009775;
+    margin: 0 auto 20px;
+}
+
+.botonesMenu {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.botonMenu {
+    background-color: white;
+    color: #009775;
+    border: 2px solid #009775;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.botonMenu.activo {
+    background-color: #009775;
+    color: white;
+}
+
+.botonMenu:hover {
+    background-color: #009775;
+    color: white;
+}
+
+.botonMenu.cerrarSesion {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+}
+
+.botonMenu.cerrarSesion:hover {
+    background-color: red;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .botonesMenu {
+        display: inline-block;
+    }
+
+    .botonMenu {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .botonMenu {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}

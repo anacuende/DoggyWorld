@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './CSSScreens/PerfilModificarDatos.css';
+import MenuPerfil from '../components/MenuPerfil.js';
 
 function PerfilModificarDatos() {
-    const navegar = useNavigate();
     const [datosUsuario, setDatosUsuario] = useState({
         nombre: '',
         nombreUsuario: '',
@@ -15,7 +14,6 @@ function PerfilModificarDatos() {
         confirmarContrasena: ''
     });
     const [errores, setErrores] = useState({});
-    const [paginaSeleccionada, setPaginaSeleccionada] = useState('/modificar-datos');
 
     useEffect(() => {
         // Petición para obtener los datos del usuario
@@ -119,38 +117,11 @@ function PerfilModificarDatos() {
         }
     };
 
-    // Cambiar al apartado seleccionado
-    const navegarAPagina = (ruta) => {
-        setPaginaSeleccionada(ruta);
-        navegar(ruta);
-    };
-
     return (
         <div className="perfilUsuarioPagina">
-            <h1 className="tituloPerfil">Perfil de usuario</h1>
-            <hr className="subrayadoPerfil"/>
-
-            {/* Botones de menú */}
-            <div className="botonesMenu">
-                <button className={`botonMenu ${paginaSeleccionada === '/perfilModificarDatos' ? 'activo' : ''}`} onClick={() => navegarAPagina('/perfilModificarDatos')}>
-                    Modificar mis datos
-                </button>
-                <button className={`botonMenu ${paginaSeleccionada === '/pefilListaDeseos' ? 'activo' : ''}`} onClick={() => navegarAPagina('/pefilListaDeseos')}>
-                    Lista de deseos
-                </button>
-                <button className={`botonMenu ${paginaSeleccionada === '/perfilPedidos' ? 'activo' : ''}`} onClick={() => navegarAPagina('/perfilPedidos')}>
-                    Mis pedidos
-                </button>
-                <button className="botonMenu cerrarSesion" onClick={() => navegarAPagina('/cerrar-sesion')}>
-                    Cerrar sesión
-                </button>
-            </div>
-
+            <MenuPerfil/>
             <div className="contenidoPerfil">
                 <div className="seccionPerfil">
-                    <h1 className="tituloPerfil">Modificar mis datos</h1>
-                    <hr className="subrayadoPerfil"/>
-
                     {/* Formulario de datos */}
                     <form className="formPerfil">
                         <label>Nombre:</label>
