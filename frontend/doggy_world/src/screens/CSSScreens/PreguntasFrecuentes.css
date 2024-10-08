@@ -1,0 +1,86 @@
+.PFContenedor {
+    padding: 0 80px;
+    margin: 0 auto 25px auto;
+}
+
+.PFTitulo {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.PFSubrayado {
+    width: 100%;
+    border: 3px solid #009775;
+    margin: 20px 0;
+}
+
+.PFIntro {
+    margin-bottom: 30px;
+}
+
+.PFIntro a {
+    color: #009775;
+    text-decoration: none;
+}
+
+.PFIntro a:hover {
+    text-decoration: underline;
+}
+
+.PFItem {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.PFPregunta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.PFFlecha {
+    font-size: 30px;
+    color: #009775;
+    transition: transform 0.3s ease;
+}
+
+.PFFlecha.abierta {
+    transform: rotate(180deg);
+}
+
+.PFRespuesta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding-top: 0;
+}
+
+.PFRespuestaVisible {
+    max-height: 200px;
+    padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .PFPregunta {
+        font-size: 16px;
+    }
+
+    .PFRespuesta {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .PFPregunta {
+        font-size: 14px;
+    }
+
+    .PFRespuesta {
+        font-size: 12px;
+    }
+}
