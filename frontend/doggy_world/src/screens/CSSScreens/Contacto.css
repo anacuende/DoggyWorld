@@ -1,0 +1,111 @@
+.contactoContenedor {
+    padding: 0 80px;
+    margin: 0 auto 25px auto;
+}
+
+.contactoTitulo {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contactoSubrayado {
+    width: 100%;
+    border: 3px solid #009775;
+    margin: 20px 0;
+}
+
+.contactoContenido {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.contactoFormulario {
+    width: 50%;
+    padding: 20px;
+}
+
+.contactoTexto {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contactoTexto h2 {
+    margin-bottom: 10px;
+}
+
+.contactoFormulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contactoFormulario input, .contactoFormulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contactoEnviar {
+    background-color: #009775;
+    color: white;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contactoEnviar:hover {
+    background-color: white;
+    color: #009775;
+    border: 2px solid #009775;
+}
+
+.contactoMapa {
+    width: 50%;
+    height: 450px;
+    margin-top: 5%;
+    border: 5px solid #009775;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.contactoMapa iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .contactoContenedor {
+        padding: 0 40px;
+    }
+
+    .contactoContenido {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contactoFormulario, .contactoMapa {
+        width: 100%;
+        padding: 0;
+    }
+
+    .contactoFormulario {
+        margin-bottom: 20px;
+    }
+
+    .contactoFormulario input, .contactoFormulario textarea {
+        width: 95%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+}
