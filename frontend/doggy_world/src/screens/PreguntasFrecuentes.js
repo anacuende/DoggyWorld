@@ -5,6 +5,14 @@ import './CSSScreens/PreguntasFrecuentes.css';
 function PreguntasFrecuentes() {
     const preguntasRespuestas = [
         { 
+            pregunta: '¿Es mejor un alimento genérico o específico/medicinal?', 
+            respuesta: 'Cada perro posee unas necesidades distintas. Recomendamos que consulte previamente con su veterinario antes de elegir la alimentación de su mejor amigo. En Doggy World disponemos de una amplia variedad de productos alimenticios donde podrás conseguir tanto un producto en concreto como otras alternativas con las mismas propiedades o similares.' 
+        },
+        { 
+            pregunta: '¿Cómo puedo conocer bien cada alimento para saber si es lo que busco?', 
+            respuesta: 'Cada producto de nuestra web posee una breve descripción del mismo. En este caso proporcionamos informacicón sobre a qué perros está enfocado cada alimento, aunque si desea saber las especificaciones del producto le recomendamos visitar el sitio web o aplicación oficial de la marca.' 
+        },
+        { 
             pregunta: '¿Hay ropa como abrigos o jerséis? ¿Se pueden personalizar?', 
             respuesta: 'En este momento no disponemos de prendas de ropa para nuestros peludos, aunque preveemos implementarlas pronto. Les podemos adelantar que sí serán personalizables dichas prendas.' 
         },
@@ -40,6 +48,7 @@ function PreguntasFrecuentes() {
 
     const [preguntaActiva, setPreguntaActiva] = useState(null);
 
+    // Mostrar la respuesta de la pregunta seleccionada
     const manejadorRespuesta = (index) => {
         setPreguntaActiva(preguntaActiva === index ? null : index);
     };

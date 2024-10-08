@@ -5,6 +5,7 @@ import Cabecera from './components/Cabecera';
 import Inicio from './screens/Inicio';
 import Productos from './screens/Productos';
 import DetalleProducto from './screens/DetalleProducto';
+import Contacto from './screens/Contacto';
 import PreguntasFrecuentes from './screens/PreguntasFrecuentes';
 import Carrito from './screens/Carrito';
 import PerfilModificarDatos from './screens/PerfilModificarDatos';
@@ -22,6 +23,7 @@ function App() {
 		      <Route path="inicio" element={<Inicio/>}/>
           <Route path="productos" element={<Productos/>}/>
           <Route path="productos/:productId" element={<DetalleProducto/>}/>
+          <Route path="contacto" element={<Contacto/>}/>
           <Route path="preguntasFrecuentes" element={<PreguntasFrecuentes/>}/>
           <Route path="carrito" element={<Carrito/>}/>
           <Route path="perfilModificarDatos" element={<PerfilModificarDatos/>}/>
