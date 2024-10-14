@@ -1,11 +1,11 @@
-.inicio-contenedor {
+.inicioContenedor {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   padding: 0 20px;
 }
 
-.inicio-columna {
+.inicioColumna {
   padding: 0px 20px;
 }
 
@@ -22,7 +22,7 @@
   border-bottom: 3px solid #009775;
 }
 
-.imagen-yorkies {
+.imagenYorkies {
   width: 100%;
   height: auto;
   margin-top: 20px;
@@ -40,25 +40,25 @@
   text-align: center;
 }
 
-.imagen-producto {
+.imagenProducto {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.mensaje-error {
+.mensajeError {
   color: red;
   text-align: center;
   margin-top: 20px;
 }
 
 @media (max-width: 768px) {
-  .inicio-contenedor {
+  .inicioContenedor {
     grid-template-columns: 1fr;
   }
 
-  .imagen-yorkies {
+  .imagenYorkies {
     width: 100%;
     height: auto;
   }
@@ -68,14 +68,14 @@
     gap: 15px;
   }
 
-  .imagen-producto {
+  .imagenProducto {
     width: 80px;
     height: 80px;
   }
 }
 
 @media (max-width: 480px) {
-  .imagen-yorkies {
+  .imagenYorkies {
     width: 100%;
     height: auto;
   }
@@ -85,7 +85,7 @@
     gap: 10px;
   }
 
-  .imagen-producto {
+  .imagenProducto {
     width: 60px;
     height: 60px;
   }

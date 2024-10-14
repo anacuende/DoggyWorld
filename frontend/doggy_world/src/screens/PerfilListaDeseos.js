@@ -32,14 +32,13 @@ function PerfilListaDeseos() {
                 setError('No se pudo cargar la lista de deseos.');
             }
         };
-
         obtenerListaDeseos();
     }, []);
 
     // Petición para eliminar el producto seleccionado de la lista de deseos
     const eliminarDeListaDeseos = async (productId) => {
-        const token = localStorage.getItem('token');
         try {
+            const token = localStorage.getItem('token');
             await axios.delete(`http://localhost:8000/api/doggyWorld/wishlist?productId=${productId}`, {
                 headers: {
                     'token': token,
@@ -54,8 +53,8 @@ function PerfilListaDeseos() {
 
     // Petición para añadir el producto seleccionado al carrito
     const anadirAlCarrito = async (productoId) => {
-        const token = localStorage.getItem('token');
         try {
+            const token = localStorage.getItem('token');
             await axios.post('http://localhost:8000/api/doggyWorld/cart', {
                 producto_id: productoId,
                 cantidad: 1
@@ -88,8 +87,8 @@ function PerfilListaDeseos() {
                         <img src={producto.imagen} alt={producto.nombre} className="listaDeseosImagenProducto"/>
                         <p className="listaDeseospProductos">{producto.nombre}</p>
                         <p className="listaDeseospProductos">{producto.precio.toFixed(2)} €</p>
-                        <button className="listaDeseosBtnCarrito" onClick={(e) => { e.stopPropagation(); anadirAlCarrito(producto.id); }}>Añadir al carrito</button>
-                        <button className="listaDeseosBtnEliminar" onClick={(e) => { e.stopPropagation(); eliminarDeListaDeseos(producto.id); }}>Eliminar</button>
+                        <button className="listaDeseosBtnCarrito" onClick={(e) => {e.stopPropagation(); anadirAlCarrito(producto.id);}}>Añadir al carrito</button>
+                        <button className="listaDeseosBtnEliminar" onClick={(e) => {e.stopPropagation(); eliminarDeListaDeseos(producto.id);}}>Eliminar</button>
                     </div>
                 ))}
             </div>

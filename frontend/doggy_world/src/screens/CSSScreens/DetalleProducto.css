@@ -1,5 +1,5 @@
 
-.detalle-producto-pagina {
+.detalleProductoPagina {
     padding: 0 40px;
     margin: 25px auto;
 }
@@ -26,50 +26,50 @@ a:hover {
     color: black;
 }
 
-.detalle-contenido {
+.detalleContenido {
     display: flex;
     align-items: flex-start;
     margin-bottom: 30px;
 }
 
-.imagen-contenedor {
+.imagenContenedor {
     margin-right: 15px;
 }
 
-.imagen-detalle {
+.imagenDetalle {
     max-width: 100%;
     height: auto;
 }
 
-.informacion-producto {
+.informacionProducto {
     padding-left: 10%;
 }
 
-.nombre-producto {
+.nombreProducto {
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
 
-.descripcion-producto {
+.descripcionProducto {
     font-size: 1rem;
     color: #666;
     margin-bottom: 20px;
 }
 
-.precio-producto {
+.precioProducto {
     font-size: 1.5rem;
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
 }
 
-.botones-contenedor {
+.botonesContenedor {
     display: flex;
     gap: 15px;
     margin-top: 20px;
 }
 
-.btn-carrito {
+.botonCarrito {
     background-color: #009775;
     color: white;
     border: 3px solid transparent;
@@ -80,30 +80,30 @@ a:hover {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn-carrito:hover {
+.botonCarrito:hover {
     background-color: white;
     color: black;
     border: 3px solid #009775;
 }
 
-.btn-deseos {
+.botonDeseos {
     background-color: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
 }
 
-.icono-deseos {
+.iconoDeseos {
     width: 36px;
     height: 36px;
     transition: transform 0.3s ease;
 }
 
-.btn-deseos:hover .icono-deseos {
+.botonDeseos:hover .iconoDeseos {
     transform: scale(1.1);
 }
 
-.productos-random {
+.productosRandom {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -111,37 +111,37 @@ a:hover {
     padding: 0 40px;
 }
 
-.producto-random {
+.productoRandom {
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.producto-random:hover {
+.productoRandom:hover {
     transform: scale(1.05);
 }
 
-.imagen-random {
+.imagenRandom {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
 }
 
 @media (max-width: 1024px) {
-    .detalle-contenido {
+    .detalleContenido {
         flex-direction: column;
         align-items: center;
     }
 
-    .imagen-contenedor, .informacion-producto {
+    .imagenContenedor, .informacionProducto {
         width: 100%;
     }
 
-    .botones-contenedor {
+    .botonesContenedor {
         justify-content: center;
     }
 
-    .productos-random {
+    .productosRandom {
         grid-template-columns: repeat(3, 1fr);
     }
 }
@@ -151,19 +151,19 @@ a:hover {
         font-size: 1.8rem;
     }
 
-    .nombre-producto {
+    .nombreProducto {
         font-size: 1.5rem;
     }
 
-    .precio-producto {
+    .precioProducto {
         font-size: 1.3rem;
     }
 
-    .icono-deseos {
+    .iconoDeseos {
         margin-left: 25%;
     }
 
-    .productos-random {
+    .productosRandom {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -173,29 +173,29 @@ a:hover {
         font-size: 1.5rem;
     }
 
-    .detalle-contenido {
+    .detalleContenido {
         gap: 20px;
     }
 
-    .productos-random {
+    .productosRandom {
         grid-template-columns: 1fr;
     }
 
-    .botones-contenedor {
+    .botonesContenedor {
         flex-direction: column;
         gap: 10px;
     }
 
-    .btn-carrito {
+    .botonCarrito {
         padding: 10px;
         width: 100%;
     }
 
-    .btn-deseos {
+    .botonDeseos {
         width: 100%;
     }
 
-    .icono-deseos {
+    .iconoDeseos {
         margin-top: 5%;
         margin-left: 0;
         width: 28px;

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import './CSSScreens/PreguntasFrecuentes.css';
 
 function PreguntasFrecuentes() {
+    const [preguntaActiva, setPreguntaActiva] = useState(null);
     const preguntasRespuestas = [
         { 
             pregunta: '¿Es mejor un alimento genérico o específico/medicinal?', 
@@ -11,6 +12,14 @@ function PreguntasFrecuentes() {
         { 
             pregunta: '¿Cómo puedo conocer bien cada alimento para saber si es lo que busco?', 
             respuesta: 'Cada producto de nuestra web posee una breve descripción del mismo. En este caso proporcionamos informacicón sobre a qué perros está enfocado cada alimento, aunque si desea saber las especificaciones del producto le recomendamos visitar el sitio web o aplicación oficial de la marca.' 
+        },
+        { 
+            pregunta: '¿Ofrecen asesoramiento nutricional para elegir una correcta alimentación para mi perro?', 
+            respuesta: 'Actualmente no disponemos de este servicio ya que no contamoss con personal altamente cualificado para ello. Recomendamos consultarlo con su veterinario ya que este conocerá la situación del perro de manera más detallada.'
+        },
+        { 
+            pregunta: '¿Qué hago si mi perro es alérgico a un producto?', 
+            respuesta: 'Lo primero que deberá hacer si nota una reacción anormal en su perro es llevarlo al veterinario lo antes posible para solucionar cualquier posible problema. Si esta situación ha sido causada por alguno de nuestros productos porque este se encontraba en mal estado o defectuoso o simplemente usted como dueño desconocía dicho problema de salud en su perro respecto a un material, componente alimeticio, etc. podrá pedir una devolución del importe contactando con nosotros, adjuntando una copia del parte médico y de los documentos de confirmación y correcto recibimiento de la compra.'
         },
         { 
             pregunta: '¿Hay ropa como abrigos o jerséis? ¿Se pueden personalizar?', 
@@ -29,6 +38,10 @@ function PreguntasFrecuentes() {
             respuesta: 'No, actualmente no disponemos de este servicio.'
         },
         { 
+            pregunta: '¿Cuál es el tiempo de envío?', 
+            respuesta: 'Entre 3 y 7 días hábiles (España) y con un máximo de 30 días naturales (internacional).'
+        },
+        { 
             pregunta: '¿Hay envíos internacionales?', 
             respuesta: 'Sí, enviamos a cualquier parte del mundo. El plazo máximo de entrega para los pedidos fuera de España es de 30 días naturales.' 
         },
@@ -45,8 +58,6 @@ function PreguntasFrecuentes() {
             respuesta: 'Sí, tan solo tienes que acceder a tu perfil y seleccionar la opción "Mis pedidos". Busca el pedido que deseas cancelar y selecciona la opción "Cancelar pedido". Esa acción será suficiente para cancelar el pedido. Se realizará el intrego del importe en un plazo máximo de 7 días (puede tardar más o menos tiempo según el banco).' 
         }
     ];
-
-    const [preguntaActiva, setPreguntaActiva] = useState(null);
 
     // Mostrar la respuesta de la pregunta seleccionada
     const manejadorRespuesta = (index) => {

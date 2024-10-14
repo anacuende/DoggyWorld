@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './CSSScreens/InicioSesion.css';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import Logo from './ImagenesScreens/logo.png';
 
 function InicioSesion() {

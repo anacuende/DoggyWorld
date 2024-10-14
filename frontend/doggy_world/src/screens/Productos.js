@@ -82,7 +82,7 @@ function Productos() {
             <div className="productosProductos">
                 {productos.map((producto) => (
                     <div key={producto.id} className="producto" onClick={() => irADetalleProducto(producto.id)}>
-                        <img src={producto.imagen} alt={producto.nombre} className="imagen-producto"/>
+                        <img src={producto.imagen} alt={producto.nombre} className="imagenProducto"/>
                         <p className="pProductos">{producto.nombre}</p>
                         <p className="pProductos">{producto.precio.toFixed(2)} €</p>
                     </div>
