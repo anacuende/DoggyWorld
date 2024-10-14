@@ -54,7 +54,7 @@ Para ejecutar y visualizar el código del proyecto se deberá disponer de la úl
 
 :three: Abra una terminal en la ruta
 
-> ..\Doggy_World-main\Doggy_World-main\backend\doggyWorld
+> ..\Doggy_World-main\backend\doggyWorld
 
 y ejecute el comando
 
@@ -64,7 +64,7 @@ Ya está el servidor activo.
 
 :four: Ahora inciemos el cliente, una vez esté instalado Node.js deberá navegar a la siguiente carpeta desde la CMD o PowerShell de su PC
 
-> ..\Doggy_World-main\Doggy_World-main\frontend\DoggyWorld
+> ..\Doggy_World-main\frontend\DoggyWorld
 
 :five: Una vez dentro de dicha carpeta escribiremos los siguientes comandos, que instalarán en el equipo algunas librerías necesarias para el funcionamiento de la aplicación
 
