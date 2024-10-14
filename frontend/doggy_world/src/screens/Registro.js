@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './CSSScreens/Registro.css';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import Logo from './ImagenesScreens/logo.png';
 
 function Registro() {
@@ -55,7 +55,7 @@ function Registro() {
     <div className="contenedorRegistro">
       <div className="tarjetaRegistro">
         <div className="seccionImagen">
-          <img src={Logo} alt="Logo" className="logoImagen" />
+          <img src={Logo} alt="Logo" className="logoImagen"/>
         </div>
         <div className="seccionFormulario">
           <div className="cabeceraRegistro">
@@ -67,19 +67,19 @@ function Registro() {
           <div className="cuerpoRegistro">
             <form onSubmit={manejarRegistro}>
               <label htmlFor="nombre">Nombre</label>
-              <input type="text" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
+              <input type="text" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required/>
 
               <label htmlFor="nombreUsuario">Nombre de usuario</label>
-              <input type="text" id="nombreUsuario" value={nombreUsuario} onChange={(e) => setNombreUsuario(e.target.value)} required />
+              <input type="text" id="nombreUsuario" value={nombreUsuario} onChange={(e) => setNombreUsuario(e.target.value)} required/>
 
               <label htmlFor="email">Correo electrónico</label>
-              <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+              <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
 
               <label htmlFor="contrasena">Contraseña</label>
-              <input type="password" id="contrasena" value={contrasena} onChange={(e) => setContrasena(e.target.value)} required />
+              <input type="password" id="contrasena" value={contrasena} onChange={(e) => setContrasena(e.target.value)} required/>
 
               <label htmlFor="confirmarContrasena">Repetir contraseña</label>
-              <input type="password" id="confirmarContrasena" value={confirmarContrasena} onChange={(e) => setConfirmarContrasena(e.target.value)} required />
+              <input type="password" id="confirmarContrasena" value={confirmarContrasena} onChange={(e) => setConfirmarContrasena(e.target.value)} required/>
 
               <button type="submit" className="botonRegistroR">Registrarse</button>
               <button type="button" className="botonInicioSesionR" onClick={manejarRedireccionInicioSesion}>Iniciar sesión</button>

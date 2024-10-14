@@ -5,10 +5,10 @@ import ListaDeseos from './ImagenesScreens/listaDeseos.png';
 import './CSSScreens/DetalleProducto.css';
 
 function DetalleProducto() {
-    const { productId } = useParams();
+    const navegar = useNavigate();
+    const {productId} = useParams();
     const [producto, setProducto] = useState(null);
     const [productosRandom, setProductosRandom] = useState([]);
-    const navegar = useNavigate();
 
     useEffect(() => {
         // Petición para obtener la información del producto seleccionado
@@ -42,7 +42,6 @@ function DetalleProducto() {
                 console.error('Error al obtener productos aleatorios:', err);
             }
         };
-
         obtenerProducto();
         obtenerProductosRandom();
     }, [productId]);
@@ -100,29 +99,25 @@ function DetalleProducto() {
     };
 
     return (
-        <div className="detalle-producto-pagina">
+        <div className="detalleProductoPagina">
             <h1 className="tituloDetalle">Detalle del producto</h1>
             <hr className="subrayadoDetalle"/>
 
             {/* Muestra la información del producto seleccionado y permite añadirlo al carrito o a la lista de deseos */}
             {producto && (
-                <div className="detalle-contenido">
-                    <div className="imagen-contenedor">
-                        <img src={producto.imagen} alt={producto.nombre} className="imagen-detalle"/>
+                <div className="detalleContenido">
+                    <div className="imagenContenedor">
+                        <img src={producto.imagen} alt={producto.nombre} className="imagenDetalle"/>
                     </div>
 
-                    <div className="informacion-producto">
-                        <h2 className="nombre-producto">{producto.nombre}</h2>
-                        <p className="descripcion-producto">{producto.descripcion}</p>
-
-                        <p className="precio-producto">{producto.precio.toFixed(2)} €</p>
-
-                        <div className="botones-contenedor">
-                            <button className="btn-carrito" onClick={manejadorCarrito}>
-                                Añadir al carrito
-                            </button>
-                            <button className="btn-deseos" onClick={manejadorListaDeseos}>
-                                <img src={ListaDeseos} alt="Añadir a lista de deseos" className="icono-deseos"/>
+                    <div className="informacionProducto">
+                        <h2 className="nombreProducto">{producto.nombre}</h2>
+                        <p className="descripcionProducto">{producto.descripcion}</p>
+                        <p className="precioProducto">{producto.precio.toFixed(2)} €</p>
+                        <div className="botonesContenedor">
+                            <button className="botonCarrito" onClick={manejadorCarrito}>Añadir al carrito</button>
+                            <button className="botonDeseos" onClick={manejadorListaDeseos}>
+                                <img src={ListaDeseos} alt="Añadir a lista de deseos" className="iconoDeseos"/>
                             </button>
                         </div>
                     </div>
@@ -132,10 +127,10 @@ function DetalleProducto() {
             {/* Mapea el producto seleccionado para obtener su detalle */}
             <h2 className="tituloProductosDetalle">Te podría interesar</h2>
             <hr className="subrayadoProductosDetalle"/>
-            <div className="productos-random">
+            <div className="productosRandom">
                 {productosRandom.map((producto) => (
-                    <div key={producto.id} className="producto-random" onClick={() => irADetalleProducto(producto.id)}>
-                        <img src={producto.imagen} alt={producto.nombre} className="imagen-random"/>
+                    <div key={producto.id} className="productoRandom" onClick={() => irADetalleProducto(producto.id)}>
+                        <img src={producto.imagen} alt={producto.nombre} className="imagenRandom"/>
                         <p>{producto.nombre}</p>
                         <p>{producto.precio.toFixed(2)} €</p>
                     </div>

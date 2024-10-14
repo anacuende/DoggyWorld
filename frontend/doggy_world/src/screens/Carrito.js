@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import './CSSScreens/Carrito.css';
 
 function Carrito() {
+    const navigate = useNavigate();
     const [productosCarrito, setProductosCarrito] = useState([]);
     const [errorGeneral, setErrorGeneral] = useState(null);
     const [pedidoExitoso, setPedidoExitoso] = useState(false);
+    const [erroresCampos, setErroresCampos] = useState({}); // Errores específicos por campo
     const [formData, setFormData] = useState({
         direccion: '',
         localidad: '',
@@ -16,10 +18,7 @@ function Carrito() {
         cadTarjeta: '',
         cvv: ''
     });
-    const [erroresCampos, setErroresCampos] = useState({}); // Errores específicos por campo
-
-    const navigate = useNavigate();
-
+    
     useEffect(() => {
         // Petición para obtener los productos del carrito del usuario
         const obtenerProductosCarrito = async () => {
@@ -56,7 +55,7 @@ function Carrito() {
         }
     };
 
-    // Controla lsn cambios en los valores de los inputs
+    // Controla los cambios en los valores de los inputs
     const manejarCambioInput = (e) => {
         const { name, value } = e.target;
         setFormData((prevFormData) => ({
@@ -121,11 +120,11 @@ function Carrito() {
 
     // Tramita el pedido
     const tramitarPedido = async (e) => {
+        const nuevosErrores = validarCampos();
+
         e.preventDefault();
         setErrorGeneral(null);
         setErroresCampos({});
-    
-        const nuevosErrores = validarCampos();
         
         // Si hay algún error no realiza la solicitud
         if (Object.keys(nuevosErrores).length > 0) {

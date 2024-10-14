@@ -40,26 +40,25 @@ function Inicio() {
   };
 
   return (
-    <div className="inicio-contenedor">
-      <div className="inicio-columna izquierda">
+    <div className="inicioContenedor">
+      <div className="inicioColumna izquierda">
         <h2>Inicio</h2>
         <hr className="subrayadoInicio"/>
-        <p>A veces es agotador buscar un producto concreto para tu perro, sobre todo cuando se trata de algún producto medicinal como un alimento específico o un champú que trate su tipo de pelaje de la mejor forma. En Doggy World esto se acabó, ya que disponemos de una amplia variedad de productos y tú podrás obtenerlos todos aquí, con solo un click. Explora nuestra página y descubre el lugar donde conseguir todo lo que necesitas para tu mejor amigo.
-        </p>
-        <img src={Yorkies} alt="Yorkies" className="imagen-yorkies"/>
+        <p>A veces es agotador buscar un producto concreto para tu perro, sobre todo cuando se trata de algún producto medicinal como un alimento específico o un champú que trate su tipo de pelaje de la mejor forma. En Doggy World esto se acabó, ya que disponemos de una amplia variedad de productos y tú podrás obtenerlos todos aquí, con solo un click. Explora nuestra página y descubre el lugar donde conseguir todo lo que necesitas para tu mejor amigo.</p>
+        <img src={Yorkies} alt="Yorkies" className="imagenYorkies"/>
       </div>
       
-      <div className="inicio-columna derecha">
+      <div className="inicioColumna derecha">
         <h2>Últimas novedades</h2>
         <hr className="subrayadoInicio"/>
         {/* Mostrar los productos obtenidos con el random */}
         {error ? (
-          <p className="mensaje-error">{error}</p>
+          <p className="mensajeError">{error}</p>
         ) : (
           <div className="productosInicio">
             {productos.map((producto) => (
               <div key={producto.id} className="producto" onClick={() => irADetalleProducto(producto.id)}>
-                <img src={producto.imagen} alt={producto.nombre} className="imagen-producto"/>
+                <img src={producto.imagen} alt={producto.nombre} className="imagenProducto"/>
                 <p>{producto.nombre}</p>
                 <p>{producto.precio.toFixed(2)} €</p>
               </div>

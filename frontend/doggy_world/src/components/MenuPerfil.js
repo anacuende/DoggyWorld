@@ -48,7 +48,7 @@ function MenuPerfil() {
     return (
         <div className="perfilUsuarioMenu">
             <h1 className="tituloPerfil">Perfil de usuario</h1>
-            <hr className="subrayadoPerfil" />
+            <hr className="subrayadoPerfil"/>
 
             {/* Botones de menú */}
             <div className="botonesMenu">
@@ -61,9 +61,7 @@ function MenuPerfil() {
                 <button className={`botonMenu ${paginaSeleccionada === '/perfilPedidos' ? 'activo' : ''}`} onClick={() => navegarAPagina('/perfilPedidos')}>
                     Mis pedidos
                 </button>
-                <button className="botonMenu cerrarSesion" onClick={cerrarSesion}>
-                    Cerrar sesión
-                </button>
+                <button className="botonMenu cerrarSesion" onClick={cerrarSesion}>Cerrar sesión</button>
             </div>
         </div>
     );

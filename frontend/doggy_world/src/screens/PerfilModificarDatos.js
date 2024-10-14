@@ -4,6 +4,7 @@ import './CSSScreens/PerfilModificarDatos.css';
 import MenuPerfil from '../components/MenuPerfil.js';
 
 function PerfilModificarDatos() {
+    const [errores, setErrores] = useState({});
     const [datosUsuario, setDatosUsuario] = useState({
         nombre: '',
         nombreUsuario: '',
@@ -13,13 +14,12 @@ function PerfilModificarDatos() {
         contrasena: '',
         confirmarContrasena: ''
     });
-    const [errores, setErrores] = useState({});
 
     useEffect(() => {
         // Petición para obtener los datos del usuario
         const obtenerDatosUsuario = async () => {
-            const token = localStorage.getItem('token');
             try {
+                const token = localStorage.getItem('token');
                 const respuesta = await axios.get('http://localhost:8000/api/doggyWorld/user/register', {
                     headers: {
                         'token': token,
@@ -36,7 +36,6 @@ function PerfilModificarDatos() {
                 console.error('Error al obtener los datos del usuario', error);
             }
         };
-
         obtenerDatosUsuario();
     }, []);
 
@@ -87,8 +86,8 @@ function PerfilModificarDatos() {
             return;
         }
 
-        const token = localStorage.getItem('token');
         try {
+            const token = localStorage.getItem('token');
             const respuesta = await axios.patch('http://localhost:8000/api/doggyWorld/user', {
                 ...datosUsuario,
                 password: contrasenas.contrasena,

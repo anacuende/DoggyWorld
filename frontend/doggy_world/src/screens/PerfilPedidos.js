@@ -5,14 +5,17 @@ import MenuPerfil from '../components/MenuPerfil.js';
 
 function PerfilPedidos() {
     const [pedidos, setPedidos] = useState([]);
-    const token = localStorage.getItem('token');
 
     useEffect(() => {
         // Petición para obtener los pedidos
         const obtenerPedidos = async () => {
             try {
+                const token = localStorage.getItem('token');
                 const respuesta = await axios.get('http://localhost:8000/api/doggyWorld/pedidos', {
-                    headers: { token: token }
+                    headers: {
+                        'token': token,
+                        'Content-Type': 'application/json'
+                    }
                 });
                 console.log('Respuesta de pedidos:', respuesta.data);
                 if (respuesta.status === 200) {
@@ -24,15 +27,18 @@ function PerfilPedidos() {
                 console.error('Error al obtener los pedidos:', error.response ? error.response.data : error.message);
             }
         };
-
         obtenerPedidos();
-    }, [token]);
+    }, []);
 
     // Petición para canelar el pedido seleccionado
     const cancelarPedido = async (pedidoId) => {
         try {
+            const token = localStorage.getItem('token');
             const respuesta = await axios.delete('http://localhost:8000/api/doggyWorld/pedidos', {
-                headers: { token: token },
+                headers: {
+                    'token': token,
+                    'Content-Type': 'application/json'
+                },
                 params: { pedidoId: pedidoId }
             });
             if (respuesta.status === 200) {
@@ -47,7 +53,6 @@ function PerfilPedidos() {
     return (
         <div className="pedidosPagina">
             <MenuPerfil/>
-
             {pedidos.length === 0 ? (
                 <p>No hay pedidos disponibles.</p>
             ) : (
