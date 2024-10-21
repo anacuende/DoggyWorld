@@ -86,7 +86,7 @@ function PerfilListaDeseos() {
                     <div key={producto.id} className="listaDeseosProducto" onClick={() => irADetalleProducto(producto.id)}>
                         <img src={producto.imagen} alt={producto.nombre} className="listaDeseosImagenProducto"/>
                         <p className="listaDeseospProductos">{producto.nombre}</p>
-                        <p className="listaDeseospProductos">{producto.precio.toFixed(2)} €</p>
+                        <p className="listaDeseospProductos">{producto.precio.toFixed(2).replace('.', ',')} €</p>
                         <button className="listaDeseosBtnCarrito" onClick={(e) => {e.stopPropagation(); anadirAlCarrito(producto.id);}}>Añadir al carrito</button>
                         <button className="listaDeseosBtnEliminar" onClick={(e) => {e.stopPropagation(); eliminarDeListaDeseos(producto.id);}}>Eliminar</button>
                     </div>

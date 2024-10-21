@@ -62,7 +62,9 @@ function PerfilPedidos() {
                             <h2 className="pedidosTitulo">Pedido: {pedido.id}</h2>
                             <div className="pedidosCancelar">
                                 <button className="pedidosbtnCancelar" onClick={() => cancelarPedido(pedido.id)}>Cancelar pedido</button>
-                                <span className="pedidosTotal">Total: ${pedido.precioTotal}</span>
+                                <span className="pedidosTotal">Total: 
+                                    {typeof pedido.precioTotal === 'number' ? pedido.precioTotal.toFixed(2).replace('.', ',') : 'N/A'}€
+                                </span>
                             </div>
                         </div>
                         <hr className="pedidosSubrayado"/>
