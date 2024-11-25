@@ -8,17 +8,17 @@ function MenuPerfil() {
     const location = useLocation(); // Hook para obtener la ruta actual
     const [paginaSeleccionada, setPaginaSeleccionada] = useState('/perfilModificarDatos');
 
-    // Actualizar la página seleccionada cuando la ruta cambia
+    // Actualizar la página seleccionada cuando la URL cambia
     useEffect(() => {
         setPaginaSeleccionada(location.pathname);
     }, [location.pathname]);
 
-    // Cambiar al apartado seleccionado
+    // Navegar al apartado seleccionado de la web
     const navegarAPagina = (ruta) => {
         navegar(ruta);
     };
 
-    // Petición para cerrar sesión
+    // Petición para cerrar sesión, eliminando el token del correspondiente usuario de la base de datos
     const cerrarSesion = async () => {
         const token = localStorage.getItem('token');
         try {
@@ -29,6 +29,7 @@ function MenuPerfil() {
                 }
             });
 
+            // Mostrar una alerta en caso de éxito, eliminación el token del localStorage y navegación a la pantalla de InicioSesion.js
             if (respuesta.status === 200) {
                 alert('Sesión cerrada correctamente');
                 localStorage.removeItem('token'); // Eliminar el token de localStorage

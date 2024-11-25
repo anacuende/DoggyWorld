@@ -18,6 +18,7 @@ function InicioSesion() {
         headers: {
           'Content-Type': 'application/json',
         },
+        // Datos del usuario que trata de iniciar sesión
         body: JSON.stringify({
           user: nombreUsuario,
           password: contrasena,

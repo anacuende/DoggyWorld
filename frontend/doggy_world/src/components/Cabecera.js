@@ -31,7 +31,7 @@ function Cabecera(props) {
         // EventListener para detectar clics fuera del menú desplegable
         document.addEventListener('mousedown', manejarClickFuera);
 
-        // Limpia el EventListener cuando cierra el menú desplegable
+        // Limpia el EventListener cuando se cierra el menú desplegable
         return () => document.removeEventListener('mousedown', manejarClickFuera);
     }, [menuAbierto]);
 

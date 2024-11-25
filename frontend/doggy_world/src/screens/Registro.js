@@ -21,6 +21,7 @@ function Registro() {
         headers: {
           'Content-Type': 'application/json',
         },
+        // Datos del nuevo usuario
         body: JSON.stringify({
           name: nombre,
           username: nombreUsuario,
