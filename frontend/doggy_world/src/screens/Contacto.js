@@ -6,7 +6,7 @@ function Contacto() {
     const [email, setEmail] = useState('');
     const [mensaje, setMensaje] = useState('');
 
-    // Comprobar campos, mostrar alerta y recargar la página tras enviar el formulario
+    // Comprobar campos (no pueden estar vacíos), mostrar alerta en caso de que algo no sea correcto y recargar la página tras enviar el formulario
     const manejarEnvio = (e) => {
         e.preventDefault();
 
@@ -22,6 +22,7 @@ function Contacto() {
             return;
         }
 
+        // Mostrar alerta de éxito en caso de que todo sea correcto
         alert('Formulario enviado correctamente');
         window.scrollTo(0, 0);
         window.location.reload();

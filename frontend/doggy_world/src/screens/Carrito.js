@@ -20,7 +20,7 @@ function Carrito() {
     });
     
     useEffect(() => {
-        // Petición para obtener los productos del carrito del usuario
+        // Petición para obtener los productos, mediante su id, del carrito del usuario
         const obtenerProductosCarrito = async () => {
             try {
                 const token = localStorage.getItem('token');
@@ -30,6 +30,7 @@ function Carrito() {
                         'Content-Type': 'application/json',
                     },
                 });
+                // Guardar los productos del carrito del usuario para mostrarlos
                 setProductosCarrito(respuesta.data);
             } catch (err) {
                 console.error('Error al obtener productos del carrito:', err);
@@ -40,7 +41,7 @@ function Carrito() {
         obtenerProductosCarrito();
     }, []);
 
-    // Petición para eliminar un producto del carrito del usuario
+    // Petición para eliminar un producto, mediante su id, del carrito del usuario correspondiente
     const eliminarProducto = async (id) => {
         try {
             const token = localStorage.getItem('token');
@@ -49,13 +50,14 @@ function Carrito() {
                     'token': token,
                 },
             });
+            // Guardar los productos restantes
             setProductosCarrito(productosCarrito.filter((producto) => producto.id !== id));
         } catch (err) {
             console.error('Error al eliminar producto:', err);
         }
     };
 
-    // Controla los cambios en los valores de los inputs
+    // Controla los cambios en los valores de los inputs para enviarlos en caso de que el usuario desee tramitar el pedido
     const manejarCambioInput = (e) => {
         const { name, value } = e.target;
         setFormData((prevFormData) => ({
@@ -68,7 +70,7 @@ function Carrito() {
     // Almacena la cantidad de cada producto en la base de datos
     const cambiarCantidadProducto = async (e, id) => {
         var nuevaCantidad = parseInt(e.target.value, 10);
-        
+        // Si la cantidad se establece a "0" se pondrá ppor defecto a "1"
         if (!nuevaCantidad || nuevaCantidad < 1) {
             nuevaCantidad = 1;
         }
@@ -144,6 +146,7 @@ function Carrito() {
                 numTarjeta: formData.numTarjeta,
                 cadTarjeta: formData.cadTarjeta,
                 CVV: parseInt(formData.cvv),
+                // Obtener los productos del carrito, mediante su id, para guardarlos todos en un mismo pedido
                 productos: productosCarrito.map((producto) => ({
                     id: producto.id,
                     cantidad: producto.cantidad
@@ -162,6 +165,7 @@ function Carrito() {
             if (respuesta.status === 201) {
                 setPedidoExitoso(true);
                 setProductosCarrito([]); // Vaciar el carrito después de realizar el pedido
+                // Redirigir automáticamente a Inicio.js tras agotarse el tiempo
                 setTimeout(() => {
                     navigate('/inicio');
                 }, 3000);
@@ -187,40 +191,44 @@ function Carrito() {
     return (
         <div className="carritoContenedor">
             <div className="carritoColumna carritoIzquierda">
-              <h2>Resumen de compra</h2>
-              <hr className="subrayadoCarrito"/>
+                <h2>Resumen de compra</h2>
+                <hr className="subrayadoCarrito"/>
+                {/* Mostrar errores */}
+                {errorGeneral && (
+                    <p className="mensajeErrorCarrito">{errorGeneral}</p>
+                )}
 
-              {errorGeneral && (
-                <p className="mensajeErrorCarrito">{errorGeneral}</p>
-              )}
-
-              {productosCarrito.length > 0 ? (
-                <div className="productosCarrito">
-                  {productosCarrito.map((producto) => (
-                    <div key={producto.id} className="productoCarrito">
-                      <img src={producto.imagen} alt={producto.nombre} className="imagenProductoCarrito"/>
-                      <div className="carritoInfoProducto">
-                        <div className="nombrePrecioCantidad">
-                          <p className="nombreProducto">{producto.nombre}</p>
-                          <div className="precioCantidad">
-                            <p className="precioProducto">{producto.precio.toFixed(2)} €</p>
-                            <input type="number" min="1" defaultValue={producto.cantidad} className="carritoInputCantidad" onChange={(e) => cambiarCantidadProducto(e, producto.id)}/>
-                          </div>
-                        </div>
-                        <button onClick={() => eliminarProducto(producto.id)} className="carritoBotonEliminar">Eliminar</button>
-                      </div>
+                {productosCarrito.length > 0 ? (
+                    <div className="productosCarrito">
+                        {/* Mapeo e iterado de productos almacenados en el carrito del correspondiente usuario */}
+                        {productosCarrito.map((producto) => (
+                            <div key={producto.id} className="productoCarrito">
+                                <img src={producto.imagen} alt={producto.nombre} className="imagenProductoCarrito"/>
+                                <div className="carritoInfoProducto">
+                                    <div className="nombrePrecioCantidad">
+                                        <p className="nombreProducto">{producto.nombre}</p>
+                                        <div className="precioCantidad">
+                                            {/* Forzar a 2 decimales todos lo precios y al final el símbolo "€" correspondiente a las unidades */}
+                                            <p className="precioProducto">{producto.precio.toFixed(2)} €</p>
+                                            <input type="number" min="1" defaultValue={producto.cantidad} className="carritoInputCantidad" onChange={(e) => cambiarCantidadProducto(e, producto.id)}/>
+                                        </div>
+                                    </div>
+                                    <button onClick={() => eliminarProducto(producto.id)} className="carritoBotonEliminar">Eliminar</button>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="carritoVacio">No hay productos en el carrito</p>
-              )}
+                ) : (
+                    // Mostrar mensaje en caso de que no haya productos en el carrito del usuario
+                    <p className="carritoVacio">No hay productos en el carrito</p>
+                )}
             </div>
 
             <div className="carritoColumna carritoDerecha">
                 <h2>Dirección de entrega</h2>
                 <hr className="subrayadoCarrito"/>
                 <div className="cuerpoCarrito">
+                    {/* Mostrar alerta tras tramitar en pedido en caso de que sea exitoso */}
                     {pedidoExitoso ? (
                         alert('¡Pedido realizado correctamente!')
                     ) : (

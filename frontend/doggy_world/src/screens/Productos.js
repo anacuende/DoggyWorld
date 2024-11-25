@@ -20,15 +20,17 @@ function Productos() {
     ];
 
     useEffect(() => {
-        // Petición para obtener los productos
+        // Petición para obtener los productos según su categoría
         const obtenerProductos = async () => {
             try {
                 const token = localStorage.getItem('token');
                 let url = 'http://localhost:8000/api/doggyWorld/products';
 
                 // Parámetros para la petición según la categoría seleccionada
+                // Si la categoría es "0" se obtendrán todos los productos de la base de datos de forma desordenada mediante un random
                 if (categoriaSeleccionada === 0) {
                     url += '?random=50';
+                // Si la categoría es otra se obtendrán los productos ordenados por id correspondientes a la categoría seleccionada
                 } else {
                     url += `?category=${categoriaSeleccionada}`;
                 }
@@ -40,6 +42,7 @@ function Productos() {
                     }
                 });
 
+                // Lista de productos a mostrar por pantalla obtenida
                 setProductos(respuesta.data);
             } catch (err) {
                 console.error('Error al obtener productos:', err);

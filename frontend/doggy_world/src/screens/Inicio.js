@@ -20,6 +20,7 @@ function Inicio() {
             'Content-Type': 'application/json'
           },
         });
+        // Guardar los productos obtenidos
         setProductos(respuesta.data);
       } catch (err) {
         console.error('Error al obtener productos:', err);
@@ -51,7 +52,7 @@ function Inicio() {
       <div className="inicioColumna derecha">
         <h2>Últimas novedades</h2>
         <hr className="subrayadoInicio"/>
-        {/* Mostrar los productos obtenidos con el random */}
+        {/* Mapeo para mostrar los datos de los productos obtenidos en "obtenerProductos" */}
         {error ? (
           <p className="mensajeError">{error}</p>
         ) : (

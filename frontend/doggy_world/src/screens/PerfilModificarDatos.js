@@ -26,7 +26,7 @@ function PerfilModificarDatos() {
                         'Content-Type': 'application/json'
                     },
                 });
-                // Asignar cada dato a su correspondiente campo
+                // Asignar cada dato a su correspondiente campo para mostrarlos por pantalla
                 setDatosUsuario({
                     nombre: respuesta.data.name,
                     nombreUsuario: respuesta.data.username,
@@ -39,7 +39,7 @@ function PerfilModificarDatos() {
         obtenerDatosUsuario();
     }, []);
 
-    // Controla los cambios en los valores de los inputs
+    // Controla los cambios en los valores de los inputs para posteriormente poder enviar los cambios si el usuario lo desea
     const manejarCambio = (e) => {
         const { name, value } = e.target;
         setDatosUsuario({
@@ -48,7 +48,7 @@ function PerfilModificarDatos() {
         });
     };
     
-    // Controla los cambios en los valores de las contrasenas
+    // Controla los cambios en los valores de las contrasenas para posteriormente compararlos en caso de ser enviados
     const manejarCambioContrasenas = (e) => {
         const { name, value } = e.target;
         setContrasenas({
@@ -57,7 +57,7 @@ function PerfilModificarDatos() {
         });
     };
 
-    // Validar campos antes de actualizar los datos del usuario
+    // Validar los campos antes de actualizar los datos del usuario (ningún campo puede estar vacío)
     const validarFormulario = () => {
         const erroresTemp = {};
 
@@ -71,6 +71,7 @@ function PerfilModificarDatos() {
 
         if (!datosUsuario.correoElectronico.trim()) {
             erroresTemp.correoElectronico = 'El correo electrónico no puede estar vacío.';
+        // El correo electrónico ha de tener un "@" para ser válido
         } else if (!datosUsuario.correoElectronico.includes('@')) {
             erroresTemp.correoElectronico = 'El correo electrónico debe contener un @.';
         }
@@ -85,11 +86,12 @@ function PerfilModificarDatos() {
         if (!validarFormulario()) {
             return;
         }
-
+        // Sólo modifica los datos que el usuario desee, el resto permanecerán iguales
         try {
             const token = localStorage.getItem('token');
             const respuesta = await axios.patch('http://localhost:8000/api/doggyWorld/user', {
                 ...datosUsuario,
+                // Se obtiene la contraseña en caso de que se quiera modificar, sino permenecerá la ya existente
                 password: contrasenas.contrasena,
                 confirmPassword: contrasenas.confirmarContrasena
             }, {
@@ -99,7 +101,7 @@ function PerfilModificarDatos() {
                 }
             });
 
-            // Si todo es correcto, se recarga la página
+            // Si todo es correcto, se muestra una alerta de éxito y se recarga la página
             if (respuesta.status === 200) {
                 alert('Usuario actualizado correctamente');
                 window.scrollTo(0, 0);

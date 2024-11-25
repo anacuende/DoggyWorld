@@ -9,7 +9,7 @@ function PerfilListaDeseos() {
     const [productosDeseados, setProductosDeseados] = useState([]);
     const [error, setError] = useState(null);
 
-    // Petición para obtener los productos de la lista de deseos
+    // Petición para obtener los productos de la lista de deseos del correspondiente usuario
     useEffect(() => {
         const obtenerListaDeseos = async () => {
             try {
@@ -20,9 +20,10 @@ function PerfilListaDeseos() {
                         'Content-Type': 'application/json'
                     }
                 });
-
+                // Mostrar mensaje en caso de que la lista de deseos del usuario esté vacía
                 if (respuesta.status === 204) {
                     setError('La lista de deseos está vacía.');
+                // Mostrar los productos de la lista de deseos del usuario correspondiente en caso de que los haya
                 } else {
                     setProductosDeseados(respuesta.data);
                 }
@@ -35,7 +36,7 @@ function PerfilListaDeseos() {
         obtenerListaDeseos();
     }, []);
 
-    // Petición para eliminar el producto seleccionado de la lista de deseos
+    // Petición para eliminar el producto seleccionado, mediante su id, de la lista de deseos del correspondiente usuario
     const eliminarDeListaDeseos = async (productId) => {
         try {
             const token = localStorage.getItem('token');
@@ -45,16 +46,18 @@ function PerfilListaDeseos() {
                     'Content-Type': 'application/json'
                 }
             });
+            // Actualizar el array con los productos de la lsiat de deseos del correspondiente usuario
             setProductosDeseados(productosDeseados.filter(producto => producto.id !== productId));
         } catch (err) {
             console.error('Error al eliminar producto:', err);
         }
     };
 
-    // Petición para añadir el producto seleccionado al carrito
+    // Petición para añadir el producto seleccionado, mediante su id, al carrito del usuario correspondiente
     const anadirAlCarrito = async (productoId) => {
         try {
             const token = localStorage.getItem('token');
+            // Por defecto la cantidad será 1 (la cantidad es modificable por el usuario en la pantalla correpsondiente a Carrito.js)
             await axios.post('http://localhost:8000/api/doggyWorld/cart', {
                 producto_id: productoId,
                 cantidad: 1
@@ -64,13 +67,14 @@ function PerfilListaDeseos() {
                     'Content-Type': 'application/json'
                 }
             });
+            // Mostrar alerta de éxito tras añadir el producto al carrito
             alert('Producto añadido al carrito');
         } catch (err) {
             console.error('Error al agregar producto al carrito:', err);
         }
     };
 
-    // Navegar al detalle del producto
+    // Navegar al detalle del producto seleccionado
     const irADetalleProducto = (productId) => {
         navegar(`/productos/${productId}`);
     };
@@ -82,6 +86,7 @@ function PerfilListaDeseos() {
             {error && <p className="listaDeseosError">{error}</p>}
 
             <div className="listaDeseosProductos">
+                {/* Mapeo e iteración de los productos guardados por el correspondiente usuario en su lista de deseos */}
                 {productosDeseados.map((producto) => (
                     <div key={producto.id} className="listaDeseosProducto" onClick={() => irADetalleProducto(producto.id)}>
                         <img src={producto.imagen} alt={producto.nombre} className="listaDeseosImagenProducto"/>

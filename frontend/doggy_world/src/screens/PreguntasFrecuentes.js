@@ -4,6 +4,7 @@ import './CSSScreens/PreguntasFrecuentes.css';
 
 function PreguntasFrecuentes() {
     const [preguntaActiva, setPreguntaActiva] = useState(null);
+    // Preguntas y respuestas que se mostrarán por pantalla
     const preguntasRespuestas = [
         { 
             pregunta: '¿Es mejor un alimento genérico o específico/medicinal?', 
@@ -70,13 +71,14 @@ function PreguntasFrecuentes() {
             <hr className="PFSubrayado"/>
 
             <h3 className="PFIntro">Aquí puedes consultar las respuestas a algunas de las preguntas más frecuentes de nuestros usuarios, quizás te sirven de ayuda. Igualmente, si tu duda no está aquí resuelta puedes consultarnos directamente a través de nuestro formulario de <Link to="/contacto">Contacto</Link>.</h3>
-
+            {/* Mapeo para iterar y mostrar todas las preguntas */}
             {preguntasRespuestas.map((item, index) => (
                 <div key={index} className="PFItem">
                     <div className="PFPregunta" onClick={() => manejadorRespuesta(index)}>
                         <span>{item.pregunta}</span>
                         <span className={`PFFlecha ${preguntaActiva === index ? 'abierta' : ''}`}>&#9662;</span>
                     </div>
+                    {/* Mostrar respuesta de la pregunta seleccionada mediante el "manejadorRespuesta" */}
                     <div className={`PFRespuesta ${preguntaActiva === index ? 'PFRespuestaVisible' : ''}`}>
                         {item.respuesta}
                     </div>

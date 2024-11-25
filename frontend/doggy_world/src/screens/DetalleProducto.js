@@ -11,7 +11,7 @@ function DetalleProducto() {
     const [productosRandom, setProductosRandom] = useState([]);
 
     useEffect(() => {
-        // Petición para obtener la información del producto seleccionado
+        // Petición para obtener la información del producto seleccionado, mediante su id
         const obtenerProducto = async () => {
             try {
                 const token = localStorage.getItem('token');
@@ -21,13 +21,14 @@ function DetalleProducto() {
                         'Content-Type': 'application/json'
                     },
                 });
+                // Guardar la información obtenida del producto seleccionado
                 setProducto(respuesta.data);
             } catch (err) {
                 console.error('Error al obtener el producto:', err);
             }
         };
 
-        // Petición para obtener productos random
+        // Petición para obtener productos random para mostrar como sugerencias al usuario debajo de la información del producto
         const obtenerProductosRandom = async () => {
             try {
                 const token = localStorage.getItem('token');
@@ -37,6 +38,7 @@ function DetalleProducto() {
                         'Content-Type': 'application/json'
                     },
                 });
+                // Guardar los productos obtenidos
                 setProductosRandom(respuesta.data);
             } catch (err) {
                 console.error('Error al obtener productos aleatorios:', err);
@@ -51,7 +53,7 @@ function DetalleProducto() {
         window.scrollTo(0, 0);
     }, [productId]);
 
-    // Añade el producto al carrito
+    // Añade el producto, mediante su id, al carrito del usuario correspondiente
     const manejadorCarrito = async () => {
         try {
             const token = localStorage.getItem('token');
@@ -65,6 +67,7 @@ function DetalleProducto() {
                     },
                 }
             );
+            // Mostrar alerta en caso de que todo sea correcto
             alert('Producto agregado al carrito correctamente');
         } catch (err) {
             console.error('Error al añadir al carrito:', err);
@@ -72,7 +75,7 @@ function DetalleProducto() {
         }
     };
 
-    // Añade el producto a la lista de deseos
+    // Añade el producto, mediante su id, a la lista de deseos del usuario correspondiente
     const manejadorListaDeseos = async () => {
         try {
             const token = localStorage.getItem('token');
@@ -86,6 +89,7 @@ function DetalleProducto() {
                     },
                 }
             );
+            // Mostrar alerta de éxito en caso de que todo sea correcto
             alert('Producto agregado a la lista de deseos correctamente');
         } catch (err) {
             console.error('Error al añadir a la lista de deseos:', err);
@@ -103,7 +107,7 @@ function DetalleProducto() {
             <h1 className="tituloDetalle">Detalle del producto</h1>
             <hr className="subrayadoDetalle"/>
 
-            {/* Muestra la información del producto seleccionado y permite añadirlo al carrito o a la lista de deseos */}
+            {/* Muestra la información del producto seleccionado y permite añadirlo al carrito o a la lista de deseos mediante los botones */}
             {producto && (
                 <div className="detalleContenido">
                     <div className="imagenContenedor">
